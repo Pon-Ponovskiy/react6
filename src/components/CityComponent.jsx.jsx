@@ -1,19 +1,18 @@
 import React from "react";
-import { ReactComponent as perfect_day} from './perfect-day.svg'
+import perfect_day from '../assets/icons/perfect-day.svg'
 
 
-function CityComponents (){
+function CityComponents ({setCity}){
 
 
     return(
         <>
-            <img className="WelcomeLogo" src="perfect-day.svg"/>
+            <img className="WelcomeLogo" src={perfect_day}/>
             <span className="ChooseCityLabel">Find Weather of your city</span>
             <form className="SearchBox">
-                <input type="text" placeholder="City"/>
+                <input type="text" placeholder="City" onChange={(event)=>setCity(event.target.value)}/>
                 <button type="submit"/>
             </form>
-            
         </>
     );
 }
